@@ -1,0 +1,13 @@
+@font-face {
+    font-family: myIcon;
+    src: url("../icon/fonts/icomoon.eot") format("embedded-opentype"),
+      url("../icon/fonts/icomoon.svg") format("svg"),
+      url("../icon/fonts/icomoon.ttf") format("turetype"),
+      url("../icon/fonts/icomoon.woff") format("woff");
+  }
+[class^="icon-"],
+[class*=" icon-"]{
+    font-family: myIcon;
+    font-style: normal;
+    font-size: 20px;
+}
