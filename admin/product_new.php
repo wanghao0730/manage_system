@@ -6,7 +6,7 @@
       <!-- 发表新闻 -->
       <div class="note">
         <h3>新增产品</h3>
-        <form action="product_new_save.php" method="post" enctype="multipart/form-data">
+        <form action="./product_new_save.php" method="post" enctype="multipart/form-data">
           <table class="new-form">
             <tr>
               <td>产品名称:</td>

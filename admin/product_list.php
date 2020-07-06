@@ -43,7 +43,7 @@
                         echo '<td>'.$res[$item]['id'].'</td>';
                        echo ' <td>'.$res[$item]['productname'].'</td>';
                        echo '<td>'.$res[$item]['catename'].'</td>';
-                       echo ' <td><img src="../files/1593736071473.jpg"></td>';
+                       echo ' <td><img src="../files/'.$res[$item]['img'].'"></td>';
                          echo ' <td>'.$res[$item]['intime'].'</td>';
                        echo ' <td>
                           <a href="./product_edit.php?id='.$res[$item]['id'].'">修改</a>

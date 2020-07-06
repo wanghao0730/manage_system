@@ -17,7 +17,7 @@
     }
 
 	//构造sql语句 将数据写入数据表,实现新增单页
-	$sql = "insert into products(productname,pro_no,cate_id,content,img) values ('$productname','$pro_no','$cate_id','$content','$img')";
+	$sql = "insert into products(productname,pro_no,cate_id,content,img) values ('$productname','$pro_no','$cate_id','$content','$filename')";
 	$db = new DB();
 	$r = $db->exec($sql);
 

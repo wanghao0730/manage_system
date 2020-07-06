@@ -1,6 +1,5 @@
 <?php
-incluede('./conn.php');
-incluede('./header.php');
+include './header.php';
 //获取传入的单页模块ID
 $id=isset($_GET['id'])?$_GET['id'] : 1;
 //构造SQL语句，从单页表中读取公司简介（ID=1）的数据

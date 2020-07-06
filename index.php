@@ -1,6 +1,6 @@
-<?php 
-incluede('./conn.php')
-incluede('./header.php');
+<?php
+include './header.php';
+$db = new DB();
 ?>
 
 <div class="main1">
@@ -19,11 +19,12 @@ incluede('./header.php');
 			<tr>
 			<?php
 			//从产品数据表中最新发布的6个产品
-			$sql="select *from product order by intime desc limit 6";
-			$rs=@mysqli_query($conn,$sql);
-			while ($roe=@mysqli_fetch_assoc($rs)) {
+			$sql="select *from products order by intime desc limit 6";
+
+            $res = $db->get_results($sql,false);
+			for ($item =0;$item<count($res);$item++) {
 				echo '<td>';
-				echo '<a href="product_show.php?id='.$row['id'].'" title="'.$row['productname'].'"><img src="./files/'.$row['img'].'" alt="'.$row['productname'].'"/><br/>'.$row['productname'].'</a>';
+				echo '<a href="product_show.php?id='.$res[$item]['id'].'" title="'.$res[$item]['productname'].'"><img src="./files/'.$res[$item]['img'].'" alt="'.$res[$item]['productname'].'"/><br/>'.$res[$item]['productname'].'</a>';
 				echo '</td>';
 			}
 			?>
@@ -69,10 +70,9 @@ incluede('./header.php');
 			<div class="m1_body c">
 			<?php
 			//从单页模块表中读取针对首页写的公司简介
-			$sql="select *from board where id=6";
-			$rs=@mysqli_query($conn,$sql);
-			$row=@mysqli_fetch_assoc($rs);
-			echo $row['content'];
+			$sql="select *from board where id=18";
+            $res2 = $db->get_results($sql);
+			echo $res2['content'];
 			?>
 				<!-- 放到后台数据库 <p>　　公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介。</p>
 				<p>　　公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介，公司简介公司简介。</p> -->
@@ -83,10 +83,11 @@ incluede('./header.php');
 			<ul class="m1_body c">
 			<?php
 			//从新闻表中读取最新发表的新闻10条
-			$sql="select * from order by intime desc limit 10";
-			$rs=@mysqli_query($conn,$sql);
-			while ($row=@mysqli_fetch_assoc($rs)) {
-				echo '<li><span>'.date('m-d',($row['intime'])).'</span><a href="content.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+			$sql="select * from news order by intime desc limit 5";
+            $db = new DB();
+            $res = $db->get_results($sql,false);
+            for ($item =0;$item<count($res);$item++) {
+				echo '<li><span>'.$res[$item]['intime'].'</span><a href="content.php?id='.$res[$item]['id'].'">'.$res[$item]['title'].'</a></li>';
 			}
 			?>
 				
@@ -100,9 +101,10 @@ incluede('./header.php');
 		<?php
 		//友情链接表中读取所有的友情链接数据显示到这里来
 		$sql="select * from flink order by id desc";
-		$rs=@mysqli_query($conn,$sql);
-		while ($row=@mysqli_fetch_assoc($rs)) {
-			echo '<li><a href="'.$row['link_url'].'" target="_blank">'.$row['title'].'</a></li>';
+        $db = new DB();
+        $res = $db->get_results($sql,false);
+        for ($item =0;$item<count($res);$item++) {
+			echo '<li><a href="'.$res[$item]['link_url'].'" target="_blank">'.$res[$item]['title'].'</a></li>';
 		}
 		?>
 			<li><a href="http://www.itsource.cn" target="_blank">源码时代官方网站</a></li>
@@ -111,5 +113,5 @@ incluede('./header.php');
 	<div class="c"></div>
 </div>
 <?php
-incluede('./footer.php');
+include 'footer.php'
 ?>
