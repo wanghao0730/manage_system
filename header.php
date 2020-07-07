@@ -24,7 +24,7 @@
 <div id="menu">
     <ul>
         <li><a href="./index.php" class="on">首　页</a></li>
-        <li><a href="about.php?id=1">公司简介</a></li>
+        <li><a href="about.php?id=20">公司简介</a></li>
         <li><a href="news.php">新闻中心</a></li>
         <li>
             <div id="menu3" class="menuchild" onmouseover="showmenu(3);" onmouseout="hidemenu(3);">
@@ -41,8 +41,8 @@
             <a href="product.php" onmouseover="showmenu(3);" onmouseout="hidemenu(3);">产品展示</a>
         </li>
         <li><a href="guestbook.php">来宾留言</a></li>
-        <li><a href="about.php?id=4">企业文化</a></li>
-        <li class="menu_end"><a href="about.php?id=5">联系我们</a></li>
+        <li><a href="about.php?id=21">企业文化</a></li>
+        <li class="menu_end"><a href="about.php?id=22">联系我们</a></li>
     </ul>
 </div>
 <div id="banner">
@@ -84,7 +84,7 @@
 
             for($item=0;$item<count($res);$item++){
                 echo '<li>';
-                echo '<span>'.$row['intime'].'</span>';
+                echo '<span>'.$res[$item]['intime'].'</span>';
                 echo '<a target="_blank" href="content.php?id='.$res[$item]['id'].'" title="'.$res[$item]['title'].'">'.$res[$item]['title'].'</a>';
                 echo '</li>';
             }

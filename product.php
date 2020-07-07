@@ -1,11 +1,10 @@
 <?php
-incluede('./conn.php');
-incluede('./header.php');
+include './header.php';
 $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 ?>
 		<div class="inbody">
 			<?php
-			incluede('./left.php');
+			include './left.php';
 			?>
 			
 	<div class="inright">
@@ -20,7 +19,7 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
         //条件3  一共有多少条数据
         
 
-		$sql="select *in,productname,img from product where 1";
+		$sql="select *in,productname,img from product";
 		if ($cate_id>0) {
 			$sql.=" and cate_id=$cate_id";
 		}

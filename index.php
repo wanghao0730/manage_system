@@ -70,7 +70,7 @@ $db = new DB();
 			<div class="m1_body c">
 			<?php
 			//从单页模块表中读取针对首页写的公司简介
-			$sql="select *from board where id=18";
+			$sql="select *from board where id=20";
             $res2 = $db->get_results($sql);
 			echo $res2['content'];
 			?>

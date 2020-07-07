@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="090c63ba-462a-4cba-933b-2354b8f8e860" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/product_delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product_delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/product_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/product_new.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product_new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/product_new_save.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product_new_save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auout.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coon.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/page_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/page_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guestbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/guestbook.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +84,8 @@
       <workItem from="1593592659267" duration="507000" />
       <workItem from="1593645452099" duration="3210000" />
       <workItem from="1593732535112" duration="16258000" />
-      <workItem from="1594000463370" duration="6427000" />
+      <workItem from="1594000463370" duration="6429000" />
+      <workItem from="1594091375868" duration="3824000" />
     </task>
     <servers />
   </component>
@@ -96,7 +97,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

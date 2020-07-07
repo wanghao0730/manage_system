@@ -1,7 +1,6 @@
 
 <?php
 	include ('./header.php');
-	include ('../DB.php');
 
 	$id = $_GET['id'];
 	$sql = "select * from board where id=$id";

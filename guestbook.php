@@ -1,13 +1,12 @@
 <?php
-incluede('./conn.php');
-incluede('./header.php');
+include './header.php';
 
 $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 
 ?>
 		<div class="inbody">
 			<?php
-			incluede('./left.php');
+			include 'left.php';
 			?>
 			
 			<div class="inright">
@@ -19,21 +18,21 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
                 //条件1
                 $pagesize=10;
                 //条件2
-                $paeg=isset($_GET['page']) ?$_GET['page']: 1;//从用户选择的页面进行传值得到当前在第几页上，默认在第一页
+                $page=isset($_GET['page']) ?$_GET['page']: 1;//从用户选择的页面进行传值得到当前在第几页上，默认在第一页
                 //条件3
                 //构造SQL语句，从留言表中读取所有留言列表
 				$sql="select * from guestbook where order by intime desc";
-				$rs=@mysqli_query($conn,$sql);
-				$records=@mysqli_num_rows($rs);//条件3从结果集中得到数据的总行数
+				$db=new DB();
+				$res = $db->get_results($db,false);//条件3从结果集中得到数据的总行数
 
 				
-                $start=($page-1)*$pagesize//步骤二，获取到当前页应显示的数据，并且显示出来
+                $start=($page-1)*$pagesize;//步骤二，获取到当前页应显示的数据，并且显示出来
 				$sql.="limit $start,$pagesize";//给全部的数据加一个限制输出的条件，只输出当前页应当显示的数据
-				$rs=@mysqli_query($conn,$sql);
+				$res = $db->get_results($sql,false);
 
 
-				while ($row=@mysqli_fetch_assoc($rs)) {
-					echo '<li><em>'.date('Y-m-d',strtotime($row['intime'])).'</em>'.$row['username'].'说：'.$row['content'].'</li>';
+				for ($item=0;$item<count($res);$item++) {
+					echo '<li><em>'.date('Y-m-d',strtotime($res[$item]['intime'])).'</em>'.$res[$item]['username'].'说：'.$res[$item]['content'].'</li>';
 				}
 				?>
 				</ul>
@@ -72,5 +71,5 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 		</div>
 
 <?php
-incluede('./footer.php');
+include './footer.php';
 ?>
