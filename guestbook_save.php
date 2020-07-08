@@ -1,29 +1,36 @@
 <?php
-incluede('./conn.php');
+include './DB.php';
+include './util.php';
 //步骤一：接收数据
 $username=$_POST['username'];
 $content=$_POST['content'];
-
-//验证数据有效性
-if (strlen($username)<1) {
-    echo '请输入昵称';
-    exit;
+class GuestBook {
+    public function __construct($username,$content)
+    {
+        $this->username = $username;
+        $this->content = $content;
+        $this->url ='http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/guestbook.php';
+    }
+    public function validateName() {
+        if (strlen($this->username) < 3) {
+           alert('输入内容过少', $this->url);
+            exit();
+        }
+    }
+    public function insertGuest() {
+        try{
+            $sql = "insert into guestbook (username,content) values ('$this->username','$this->content') ";
+            $db = new DB();
+            $res = $db->exec($sql);
+        }catch (Exception $e){
+            alert('写入错误',$this->url);
+        }
+        alert('留言成功',$this->url);
+    }
 }
-if (strlen($content)<2) {
-    echo '请输入留言的内容';
-    exit;
-}
-//步骤三：实现数据处理功能
-//构造SQL语句，使用 insert into 语句将接收到的用户留言数据插入到数据表中
-$sql="insert into guestbook(username,content) values('$username','$content')";
-$r=@mysqli_query($conn,$sql);
 
-
-//步骤四：将结果显示出来
-if ($r) {
-   alert('留言成功！','guestbook.php');
-}else{
-    echo '留言失败！';
-}
+$guest = new GuestBook($username,$content);
+$guest->validateName();
+$guest->insertGuest();
 
 ?>

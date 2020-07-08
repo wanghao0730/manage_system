@@ -34,7 +34,7 @@
                 $db = new DB();
                 $res = $db->get_results($sql,false);
                 for($item=0;$item<count($res);$item++){
-                    echo '<a href="product.php?cate_id=1='.$res[$item]['id'].'">'.$res[$item]['catename'].'</a>';
+                    echo '<a href="product.php?cate_id='.$res[$item]['id'].'">'.$res[$item]['catename'].'</a>';
                 }
                 ?>
             </div>

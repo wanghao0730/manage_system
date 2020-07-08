@@ -1,27 +1,25 @@
 <?php
 //! 此页面为头部文件
-// 加载数据库页面
-include("../DB.php");
-// 启动session
-session_start();
-//! 如果if语句中的判断为false表示不存在登录 
+// 加载判断用户是否登录
+//! 如果if语句中的判断为false表示不存在登录
 //! 会进入里面的if做判断是否存在设置了cookie
-// if (!isset($_SESSION['userName'])) {
-//   //! 判断是否设置了cookie
-//   if (isset($_COOKIE['userName']) && isset($_COOKIE['userPwd'])) {
-//     //todo 存在的话将cookie的值赋值给session
-//     $_SESSION['userName'] = $_COOKIE['userName'];
-//     $_SESSION['userPwd'] = $_COOKIE['userPwd'];
-//   }
-// }
-
-//!  二次判断 这个用于判断是否存在session 
+session_start();
+include "../util.php";
+if (!isset($_SESSION['userName'])) {
+    //! 判断是否设置了cookie
+    if (isset($_COOKIE['userName']) && isset($_COOKIE['userPwd'])) {
+        //todo 存在的话将cookie的值赋值给session
+        $_SESSION['userName'] = $_COOKIE['userName'];
+        $_SESSION['userPwd'] = $_COOKIE['userPwd'];
+    }
+}
+//!  二次判断 这个用于判断是否存在session
 // ! 如果上面判断不存在cookie 那么session就没有值 就结束后面代码运行
-// if (!isset($_SESSION['userName'])) {
-//   alert("请登录后再来吧.... ", "./login.php");
-//   //!  结束后面代码运行
-//   exit;
-// }
+if (!isset($_SESSION['userName'])) {
+    alert("请登录后再来吧.... ", "./login.php");
+//!  结束后面代码运行
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +29,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>管理系统</title>
+    <link rel="icon" href="./public/img/c.png">
   <link rel="stylesheet" href="./public/css/icon.css">
   <link rel="stylesheet" href="./public/css/main.css">
 

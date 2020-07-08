@@ -19,24 +19,24 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
         //条件3  一共有多少条数据
         
 
-		$sql="select *in,productname,img from product";
+		$sql="select id,productname,img  from products";
 		if ($cate_id>0) {
-			$sql.=" and cate_id=$cate_id";
+			$sql.=" where cate_id=$cate_id";
 		}
+
 		$sql.=" order by intime desc";
-		$rs=@mysqli_query($conn,$sql);
-        
-        $records=@mysqli_num_rows($rs);//获取到一共有多少行数据 
+        $rs = $db->get_results($sql,false);
+        $records = count($rs);//获取到一共有多少行数据
 
         //分页步骤二  当前页应当显示哪些数据
         $start=($page-1)*$pagesize;
         $sql.=" limit $start,$pagesize";
-        $rs=@mysqli_query($conn,$sql);
+        $rs = $db->get_results($sql,false);
 
-		while ($row=@mysqli_fetch_assoc($rs)) {
+        for ($item=0;$item<count($rs);$item++)  {
 			echo '<li>';
-			echo '<div class="pic"><a href="product_show.php?id='.$row['id'].'"><img src="./files/'.$row['img'].'" alt=""/></a></div>';
-			echo '<h4><a href="product_show.php?id='.$row['id'].'">'.$row['productname'].'</a></h4>';
+			echo '<div class="pic"><a href="product_show.php?id='.$rs[$item]['id'].'"><img src="./files/'.$rs[$item]['img'].'" alt=""/></a></div>';
+			echo '<h4><a href="product_show.php?id='.$rs[$item]['id'].'">'.$rs[$item]['productname'].'</a></h4>';
 			echo '</li>';
 		}
 		?>
@@ -66,5 +66,5 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 	</div>
 </div>
 <?php
-incluede('./footer.php');
+include "./footer.php";
 ?>

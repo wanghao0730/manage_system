@@ -16,20 +16,20 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 				
                 //步骤一
                 //条件1
-                $pagesize=10;
+                $pagesize=3;
                 //条件2
                 $page=isset($_GET['page']) ?$_GET['page']: 1;//从用户选择的页面进行传值得到当前在第几页上，默认在第一页
                 //条件3
                 //构造SQL语句，从留言表中读取所有留言列表
-				$sql="select * from guestbook where order by intime desc";
+				$sql="select * from guestbook order by intime desc";
 				$db=new DB();
-				$res = $db->get_results($db,false);//条件3从结果集中得到数据的总行数
+				$res = $db->get_results($sql,false);//条件3从结果集中得到数据的总行数
 
 				
                 $start=($page-1)*$pagesize;//步骤二，获取到当前页应显示的数据，并且显示出来
-				$sql.="limit $start,$pagesize";//给全部的数据加一个限制输出的条件，只输出当前页应当显示的数据
+				$sql.=" limit $start,$pagesize";//给全部的数据加一个限制输出的条件，只输出当前页应当显示的数据
 				$res = $db->get_results($sql,false);
-
+                $records = count($res);
 
 				for ($item=0;$item<count($res);$item++) {
 					echo '<li><em>'.date('Y-m-d',strtotime($res[$item]['intime'])).'</em>'.$res[$item]['username'].'说：'.$res[$item]['content'].'</li>';
@@ -43,14 +43,14 @@ $cate_id=isset($_GET['cate_id']) ? $_GET['cate_id']:0;
 				$pagecount=ceil($records/$pagesize);
 
 				if ($page>1) {
-					echo '<a href="news.pph?page=1">首页</a>';
-					echo '<a href="news.pph?page='.($page-1).'">上一页</a>';
+					echo '<a href="news.php?page=1">首页</a>';
+					echo '<a href="news.php?page='.($page-1).'">上一页</a>';
 				}
 				for ($i=1; $i <=$pagecount ; $i++) { 
 					if ($i==$page) {
-						echo '<a href="news.pph?page='.$i.'" class="on">'.$i.'</a>';
+						echo '<a href="news.php?page='.$i.'" class="on">'.$i.'</a>';
 					}else{
-						echo '<a href="news.pph?page='.$i.'">'.$i.'</a>';
+						echo '<a href="news.php?page='.$i.'">'.$i.'</a>';
 					}
 				}
 

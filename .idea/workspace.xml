@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="090c63ba-462a-4cba-933b-2354b8f8e860" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/left.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/check_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/check_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/login_out.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login_out.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guestbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/guestbook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guestbook_save.php" beforeDir="false" afterPath="$PROJECT_DIR$/guestbook_save.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_show.php" beforeDir="false" afterPath="$PROJECT_DIR$/product_show.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,17 +43,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin/public/img" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\web1\admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\web1\admin\public\img" />
       <recent name="C:\wamp\www\web1\admin" />
       <recent name="C:\wamp\www\web1" />
       <recent name="C:\wamp\www\web1\asserts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\web1\admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -80,7 +90,7 @@
       <workItem from="1593732535112" duration="16258000" />
       <workItem from="1594000463370" duration="6429000" />
       <workItem from="1594091375868" duration="3824000" />
-      <workItem from="1594173294521" duration="2062000" />
+      <workItem from="1594173294521" duration="10842000" />
     </task>
     <servers />
   </component>
