@@ -4,6 +4,7 @@
 //! 如果if语句中的判断为false表示不存在登录
 //! 会进入里面的if做判断是否存在设置了cookie
 session_start();
+include "../DB.php";
 include "../util.php";
 if (!isset($_SESSION['userName'])) {
     //! 判断是否设置了cookie
